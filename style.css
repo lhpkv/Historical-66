@@ -1120,3 +1120,17 @@ footer {
 .animate-piece.animate__animated {
   opacity: 1;
 }
+
+.nav-link {
+  transition: color 0.25s ease, background-color 0.25s ease, padding 0.25s ease,
+    border-radius 0.25s ease;
+}
+
+.nav-link.active {
+  color: #fff !important;
+  font-weight: 600;
+  background-color: #ffffff2b;
+  border-radius: 100px;
+  padding-right: 20px !important;
+  padding-left: 20px !important;
+}
