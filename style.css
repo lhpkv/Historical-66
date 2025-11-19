@@ -203,7 +203,7 @@ header.scrolled {
   left: 0;
   right: 0;
   height: 200px;
-  background: linear-gradient(to bottom, transparent, #0c1a3ee6);
+  background: linear-gradient(to bottom, transparent, #08132fe6);
   z-index: 2;
   pointer-events: none;
 }
@@ -214,7 +214,7 @@ header.scrolled {
 }
 
 .destinations-section {
-  background-color: #0c1a3ee6;
+  background-color: #08132fe6;
   padding: 80px 0;
   color: white;
 }
@@ -314,7 +314,7 @@ header.scrolled {
 }
 
 .popular-tourism-section {
-  background-color: #0c1a3ee6;
+  background-color: #08132fe6;
   padding: 100px 0;
   color: white;
 }
@@ -444,7 +444,7 @@ header.scrolled {
 }
 
 .video-section {
-  background-color: #0c1a3ee6;
+  background-color: #08132fe6;
   padding: 100px 0;
   color: white;
 }
@@ -517,7 +517,7 @@ header.scrolled {
 
 .travel-pack-section {
   padding: 100px 0;
-  background-color: #0c1a3ee6;
+  background-color: #08132fe6;
   color: white;
 }
 
@@ -565,7 +565,7 @@ header.scrolled {
 }
 
 footer {
-  background-color: #0c1a3ee6;
+  background-color: #08132fe6;
   padding: 50px 0 20px;
   color: white;
   border-top: 1px solid #334a7c;
@@ -722,7 +722,7 @@ footer {
 
 .map-section {
   padding: 100px 0;
-  background-color: #0c1a3ee6;
+  background-color: #08132fe6;
 }
 
 .map-section h2 {
