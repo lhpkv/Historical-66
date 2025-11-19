@@ -235,7 +235,7 @@ document.querySelector('.scroll-down')?.addEventListener('click', () => {
     col.innerHTML = `
       <div class="gallery-card">
         <img src="${img}" class="gallery-img">
-        <div class="gallery-overlay"><h5>Image</h5></div>
+        <div class="gallery-overlay"><h5></h5></div>
       </div>`;
     col.addEventListener('click', () => {
       document.getElementById('modalImage').src = img;

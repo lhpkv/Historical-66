@@ -1206,7 +1206,6 @@ footer {
   top: 120px;
   width: 350px; /* ปรับตามต้องการ */
   /* height: calc(100vh - 140px); */
-  overflow-y: hidden;
   padding-right: 10px;
   z-index: 99999;
 }
