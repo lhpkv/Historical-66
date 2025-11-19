@@ -1232,3 +1232,12 @@ footer {
   height: 140px;
   object-fit: cover;
 }
+
+.historical-gallery {
+  position: relative;
+  z-index: -1 !important;
+}
+
+.gallery-subtitle {
+  color: #ffffffab;
+}
