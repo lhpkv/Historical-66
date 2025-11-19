@@ -19,6 +19,8 @@ if (window.Swiper) {
     centeredSlides: true,
     slidesPerView: 'auto',
     loop: true,
+    keyboard: true,
+    autoplay: true,
     coverflowEffect: {
       rotate: 0,
       stretch: 80,
