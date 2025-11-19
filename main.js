@@ -276,3 +276,12 @@ document.querySelector('.scroll-down')?.addEventListener('click', () => {
   );
   animateItems.forEach((el) => obs.observe(el));
 })();
+
+document.addEventListener('DOMContentLoaded', function () {
+  const tooltip = document.getElementById('mapTooltip');
+  const closeBtn = tooltip.querySelector('.btn-close');
+
+  closeBtn.addEventListener('click', () => {
+    tooltip.style.display = 'none';
+  });
+});
