@@ -1,15 +1,9 @@
-/* ================================
-   Header Scroll
-================================= */
 window.addEventListener('scroll', () => {
   const header = document.querySelector('header');
   if (window.scrollY > 50) header.classList.add('scrolled');
   else header.classList.remove('scrolled');
 });
 
-/* ================================
-     Swiper Slider
-  ================================= */
 if (typeof Swiper !== 'undefined') {
   new Swiper('.mySwiper', {
     effect: 'coverflow',
@@ -31,9 +25,6 @@ if (typeof Swiper !== 'undefined') {
   });
 }
 
-/* ================================
-     GSAP Parallax (DOMContentLoaded)
-  ================================= */
 document.addEventListener('DOMContentLoaded', () => {
   gsap.registerPlugin(ScrollTrigger);
 
@@ -85,9 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-/* ================================
-     Province Cards
-  ================================= */
 (() => {
   const provinces = [
     {
@@ -211,9 +199,6 @@ document.addEventListener('DOMContentLoaded', () => {
   render(provinces);
 })();
 
-/* ================================
-     MAP TOOLTIP
-  ================================= */
 (() => {
   const pinData = [
     {
@@ -316,17 +301,17 @@ document.addEventListener('DOMContentLoaded', () => {
   new IntersectionObserver(
     (entries) => {
       if (!entries[0].isIntersecting) {
-        tooltip.classList.remove('show');
-        tooltip.style.display = 'none';
+        const closeBtn = tooltip.querySelector('.btn-close');
+        closeBtn.addEventListener('click', () => {
+          tooltip.classList.remove('show');
+          tooltip.style.display = 'none';
+        });
       }
     },
     { threshold: 0.1 },
   ).observe(document.querySelector('.map-section'));
 })();
 
-/* ================================
-     AUTO-SECTION ACTIVE NAV
-  ================================= */
 (() => {
   if (!window.__navObserver) {
     const sections = document.querySelectorAll('section[id]');
@@ -351,18 +336,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 })();
 
-/* ================================
-     Scroll down button
-  ================================= */
 document.querySelector('.scroll-down')?.addEventListener('click', () => {
   document.querySelector('section:nth-of-type(2)')?.scrollIntoView({
     behavior: 'smooth',
   });
 });
 
-/* ================================
-     Counter Animation
-  ================================= */
 (() => {
   function animateCounter(counter) {
     const target = +counter.dataset.target;
@@ -396,9 +375,6 @@ document.querySelector('.scroll-down')?.addEventListener('click', () => {
   observer.observe(document.querySelector('.stats'));
 })();
 
-/* ================================
-     GALLERY
-  ================================= */
 (() => {
   const galleryData = [
     {
@@ -464,9 +440,6 @@ document.querySelector('.scroll-down')?.addEventListener('click', () => {
   });
 })();
 
-/* ================================
-     Animate On View (animate.css)
-  ================================= */
 (() => {
   const items = document.querySelectorAll('.animate-piece');
 
@@ -490,3 +463,58 @@ document.querySelector('.scroll-down')?.addEventListener('click', () => {
 
   items.forEach((el) => observer.observe(el));
 })();
+
+document.addEventListener('DOMContentLoaded', () => {
+  const placeContainer = document.getElementById('placeCards');
+  if (!placeContainer) {
+    console.warn('placeCards container not found!');
+    return;
+  }
+
+  const places = [
+    {
+      name: 'Ayutthaya Historical Park',
+      img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQe4xiTNZo4X6mC47meL91DT8T3q-8tlIaOCA&s',
+      desc: 'One of Thailand’s most important ancient sites with temples and royal ruins.',
+    },
+    {
+      name: 'Sukhothai Historical Park',
+      img: 'https://blog.bangkokair.com/wp-content/uploads/2025/06/Cover_sukhothai-historical-park.jpg',
+      desc: 'Origin of Thai culture with iconic Buddha statues and ancient temples.',
+    },
+    {
+      name: 'Wat Phra Kaew',
+      img: 'https://smarthistory.org/wp-content/uploads/2020/12/Temple-complex-Wat-Phra-Kaew.jpg',
+      desc: 'The most sacred temple of Thailand, home of the Emerald Buddha.',
+    },
+    {
+      name: 'Wat Arun',
+      img: 'https://www.agoda.com/wp-content/uploads/2024/03/Featured-image-Wat-Arun-Bangkok-Thailand.jpg',
+      desc: 'Riverside temple famous for its stunning prang tower.',
+    },
+    {
+      name: 'Phanom Rung',
+      img: 'https://13ased.moe.go.th/wp-content/uploads/2024/08/P03004793_1.jpeg',
+      desc: 'Ancient Khmer temple built on an extinct volcano.',
+    },
+  ];
+
+  places.forEach((item, i) => {
+    const col = document.createElement('div');
+    col.className = 'col-md-6 col-lg-4 mb-4 animate-piece';
+    col.dataset.animate = 'animate__fadeInUp';
+    col.dataset.delay = 0.2 + i * 0.15 + 's';
+
+    col.innerHTML = `
+        <div class="place-card">
+          <img src="${item.img}" alt="${item.name}">
+          <div class="place-body">
+            <h5>${item.name}</h5>
+            <p>${item.desc}</p>
+          </div>
+        </div>
+      `;
+
+    placeContainer.appendChild(col);
+  });
+});
